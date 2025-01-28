@@ -1,12 +1,6 @@
 const mysql = require('mysql2');
 
-const db = mysql.createConnection({
-  host: 'monorail.proxy.rlwy.net',        // Host de la base de datos
-  user: 'root',                           // Usuario
-  password: 'DCTyfYqrVOfovXxJbHLKcDcnaZWIZVQF',  // Contraseña
-  database: 'railway',                    // Nombre de la base de datos
-  port: 12608                             // Puerto
-});
+// 
 
 // Configuración de la base de datos local
 // const db = mysql.createConnection({
