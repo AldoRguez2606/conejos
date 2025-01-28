@@ -1,20 +1,21 @@
-const mysql = require("mysql2");
+const mysql = require('mysql2');
 
 // Configuración de la base de datos
-const db = mysql.createConnection({
-  host: "localhost", // Cambia por tu host o dominio
-  user: "root", // Tu usuario de MySQL
-  password: "", // Tu contraseña
-  database: "mi_base_de_datos", // Nombre de tu base de datos
+const connection = mysql.createConnection({
+  host: 'monorail.proxy.rlwy.net',  // El host de la base de datos (extraído de la URL)
+  user: 'root',                     // El usuario
+  password: 'puqDlYtcXCHxWdUCXIwofYtnozKFifLd', // La contraseña
+  database: 'railway',              // El nombre de la base de datos
+  port: 58701                       // El puerto (58701 como se especifica en la URL)
 });
-
 // Conexión
-db.connect((err) => {
+// Conexión a la base de datos
+connection.connect((err) => {
   if (err) {
-    console.error("Error conectando a la base de datos:", err);
+    console.error('Error al conectar a la base de datos: ', err.stack);
     return;
   }
-  console.log("Conexión a la base de datos establecida.");
+  console.log('Conectado a la base de datos');
 });
 
-module.exports = db;
+module.exports = mysql;
