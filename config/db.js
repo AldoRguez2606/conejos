@@ -1,11 +1,12 @@
 const mysql = require('mysql2');
+require('dotenv').config();
 
 const db = mysql.createConnection({
-  host: 'monorail.proxy.rlwy.net',        // Host de la base de datos
-  user: 'root',                           // Usuario
-  password: 'DCTyfYqrVOfovXxJbHLKcDcnaZWIZVQF',  // Contraseña
-  database: 'railway',                    // Nombre de la base de datos
-  port: 12608                             // Puerto
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_DATABASE,
+  port: process.env.DB_PORT
 });
 
 // Configuración de la base de datos local
