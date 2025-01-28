@@ -17,6 +17,10 @@ app.use(cors());  // Habilitar CORS si es necesario
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.get('/', (req, res) => {
+  res.send(`Hola Mundo desde el puerto ${PORT}`);
+});
+
 // Rutas
 app.use('/api/auth', authRoutes);
 app.use('/api', dataRoutes);
